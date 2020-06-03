@@ -1,11 +1,21 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import json
 import time
+import os
 
-webapp = Flask(__name__)
+webapp = Flask(__name__, static_folder="../build", template_folder="../build")
 
 messages_db = {}
 
+
+# Serve React App
+@webapp.route('/', defaults={'path': ''})
+@webapp.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(webapp.static_folder + '/' + path):
+        return send_from_directory(webapp.static_folder, path)
+    else:
+        return send_from_directory(webapp.static_folder, 'index.html')
 
 @webapp.route('/messages', methods=['POST'])
 def get_messages():
