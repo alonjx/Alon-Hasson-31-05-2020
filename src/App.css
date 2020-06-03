@@ -1,0 +1,85 @@
+button:focus {
+  outline:0;
+}
+.wrapper {
+    display: flex;
+}
+.content {
+  flex:1 0 0;
+  min-width: 70%;
+
+  margin:15px 20px;
+}
+.notification-bar {
+  position: absolute;
+  right:6vh;
+  top:10px;
+}
+
+.banner {
+  position: absolute;
+  top:40%;
+  font-size:10vw;
+  opacity: 0.1;
+}
+#sidebar {
+    flex:0 0 1;
+    min-width: 20%;
+    background:#246489;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+#sidebar.active {
+    margin-left: 20%;
+}
+
+
+.fa-plus-circle {
+  position: absolute;
+  right:0.5vw;
+  top:0.5vh;
+  color:#22bf43;
+}
+.fa-plus:hover {
+  cursor: pointer;
+}
+
+.message-tab {
+  display: flex;
+  padding:0;
+  position: relative;
+}
+
+.message-tab:hover {
+  background:#f8f8f8;
+}
+.message-tab .data {
+  flex: 6;
+}
+.message-tab .data .date {
+  font-size:12px;
+}
+.message-tab .icon {
+  flex:0;
+  display: flex;
+  align-items: center;
+  height:100%;
+  transition: flex 0.3s;
+  background:#d12721;
+  color:#fff;
+  opacity: 0.85;
+  height: 100%;
+  font-size:2vw;
+
+}
+.message-tab i {
+  padding: 0px 0.5vw;
+  position: absolute;
+}
+.message-tab i:hover {
+  cursor: pointer;
+}
+.message-tab:hover .icon {
+  flex:1;
+}
