@@ -7,11 +7,6 @@ webapp = Flask(__name__)
 messages_db = {}
 
 
-@webapp.route('/')
-def nothing():
-    return jsonify('nothing here')
-
-
 @webapp.route('/messages', methods=['POST'])
 def get_messages():
     global messages_db
